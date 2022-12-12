@@ -1,0 +1,55 @@
+---------------------------------------------------------------------------------
+
+--------------------------------- INTRODUCAO ------------------------------------
+
+---------------------------------------------------------------------------------
+
+
+                                 INICIO 12/12
+
+-------
+
+***Virtual Machine*** - uma maquina virtual e um software capaz de instalar um 
+sistema operativo dentro de si mesmo, dando a ilusao que e criado num computador 
+real. Uma maquina virtual usa o seu proprio CPU, memoria, network interface e 
+armazenamento. O software que cria a virtual machine e chamado de hypervisor - 
+responsavel por isolar as sources da vm. O dispositivo que fornece as resources de 
+hardware chama se de host, quem consegue ter acesso ja se chama de guest ou guest 
+machine.
+
+-------
+
+***LVM*** - Logival Volume Manager - e uma camada abstracta entre o armazenamento 
+de um dispositivo (storage device) e de um sistema de ficheiros (file system). Esta 
+dita camada da uma maior flexibilidade no que toca a criar e lidar com particoes. 
+Sem a LVM, nao conseguiriamos expandir o armazenamento de particoes visto que isso
+estaria dependente disco.
+Com uma LVM, e possivel modificar e expandir o armazenamento de qualquer particao 
+sem ter restricoes, tambem situadas em discos fisicos diferentes. Existem 3 tipos 
+de volumes diferentes:
+
+    - *Volume Fisico* (Physical Volume - PV) armazenamento fisico do dispositivo, 
+	pode ser um disco rigido, sd card etc;
+
+    - *Volume de Grupo* (Volume Group - VG) serve para usar o espaco fornecido 
+	pelo PV, quase como um disco de armazenamento virtual que vai ser usado por 
+	LV’s. Estes podem aumentar adicionando PV’s;
+
+    - *Volume Logico* (Logical Volume - LV) dispositivos que vao servir para criar
+	file systems, swaps, virtual machines, etc. Sendo o VG o disco de armazenamento, 
+	os LV vao ser as particoes dentro desse disco.
+
+-------
+
+***Apt*** - Num sistema operativo baseado em Debian, o default package manager que 
+podemos usar e o dpkg. Isto da nos permissao para instalar, remover e modificar 
+programas no nosso sistema operativo (OS). Estes programas costumam vir com 
+dependencias que devem ser instaladas para o programa principal poder funcionar. 
+Nestes casos, Apt (Advanced Package Tool), uma ferramenta que usa dpkg, pode ser 
+usada para instalar todas as dependencias necessarias ao instalar um programa.
+
+-------
+
+***Aptitude*** - serve para instalar programas de uma interface grafica (praphical 
+interface), tambem ajuda a controlar melhor as dependencias, permitindo o utilizador 
+escolher as dependencias ao instalar um programa.
