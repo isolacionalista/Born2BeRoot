@@ -76,5 +76,16 @@ Tecnicas de encriptacao SSH:
 -------
 
 
+***UFW*** - Uncomplicated Firewall - e uma aplicacao de softwar responsavel de 
+verificar se o administrador consegue aceder e modificar iptables de uma maneira
+simples. A UFW permite modificar interfaces sem comprometer a sua seguranca. 
+Ao instalar, e possivel escolher quais os ports para fazer as conexoes e quais fechar.
 
+-------
 
+***Cron*** - um Linux Task Manager que permite executar comandos num tempo definido.
+
+***Wall*** - um comando usado pelo utilizador root para enviar uma mensagens a 
+todos o outros conectados ao mesmo servidor.
+
+-------
