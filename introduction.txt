@@ -97,3 +97,8 @@ por perfil. Estes perfis podem trabalhar em 2 modos:
 	- Enforce-mode onde proibe as aplicacoes de realizar tarefas restritas;
 	- Complain-mode onde permite realizar tais tarefas mas cria um registo de 
 	entrada.
+
+-------
+
+***VDI*** - Virtual Desktop Infrastructure - uma tecnologia que permite uma 
+maquina virtual ter e modificar um Desktop Virtual.

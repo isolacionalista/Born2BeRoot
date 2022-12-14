@@ -5,3 +5,70 @@
 ---------------------------------------------------------------------------------
 
 
+site de onde descarreguei Debian amd64 - https://www.debian.org/CD/netinst/
+
+contem um sistema operativo inteiro, com o software minimo para instalar o
+sistema base e dar fetch nos pacotes extras pela internet.
+
+-------
+
+Configuracoes da Virtual Machine
+
+New Virtual box;
+Dar o nome do projecto ou wtv;
+Machine Folder - goinfre/VirtualBox VMs
+Tipo Linux
+Versao Debian 64-bit
+Ram 1024 MB (o recomendado)
+Hard Disk (disco rigido)
+VDI com fixed size e 8gb
+
+
+-------
+
+Depois de ter a maquina criada, ir as configuracoes dela antes de iniciar, ir ao
+storage e usar o debian amd64 descarregado como disco.
+
+-------
+
+
+Install e configurar com a lingue, time-zone etc etc
+
+hostname: imendonc42 (login)
+domain vazio
+rootpassword - criar uma
+nome completo imendonc42 (indiferente)
+username imendonc (login)
+password
+time-zone
+
+-------
+
+Setup de particoes (mandatorio)
+
+metodo de particoes guiado, usar disco inteiro e LVM encriptado
+SCSIX (0,0,0) (sda) - 8.6gb ATA VBOX HARDDISK
+separar /home particao. Escrever mensagem de encriptacao, 8.1g
+terminar particoes e escrever mudancas no disco.
+
+Configurar packet manager (nao), escolher a localizacao do espelho de debian
+deb.debian.org, nao preencher nada no proxy info. nao participar no questionario
+
+remover as opcoes de ssh standart, grub (sim), /dev/sda
+
+--------
+
+configurar a vm
+
+tem de se inserir a mensagem de ecnriptacao e fazer o login com a password.
+
+-------
+
+intalacao de sudo e adicionar utilizadores em grupos
+
+$su - ,(inserir password), $apt install sudo
+$adduser .username. sudo, $sudo reboot
+$sudo -v (-validate, da update as credenciais do usar e autentica-as se necessario)
+$sudo addgroup user 42
+$sudo adduser .username. user 42 (esta a adicionar o user ao grupo)
+
