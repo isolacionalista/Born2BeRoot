@@ -89,3 +89,11 @@ Ao instalar, e possivel escolher quais os ports para fazer as conexoes e quais f
 todos o outros conectados ao mesmo servidor.
 
 -------
+
+***AppArmor*** - a AppArmor permite o Mandatory Access Control (MAC) security. 
+Permite que o administrador restrinja as accoes que processos podem exercer. serve
+para modificar, retirar e acrescentar permissoes a aplicacoes, estes sao geridos
+por perfil. Estes perfis podem trabalhar em 2 modos:
+	- Enforce-mode onde proibe as aplicacoes de realizar tarefas restritas;
+	- Complain-mode onde permite realizar tais tarefas mas cria um registo de 
+	entrada.
