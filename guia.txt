@@ -72,3 +72,23 @@ $sudo -v (-validate, da update as credenciais do usar e autentica-as se necessar
 $sudo addgroup user 42
 $sudo adduser .username. user 42 (esta a adicionar o user ao grupo)
 
+-------
+
+instalacao e configuracao de ssh
+
+$sudo apt install openssh-server
+$sudo nano /etc/ssh/sshd_config  --- mudar o port 22 para port 4242 e 
+permitrootlogin prohibit-password para no !!!!eliminar #!!!!
+$sudo nano /etc/ssh/ssh_config ----- mudar o port 22 para 4242 e eliminar #
+$sudo service ssh status ---- verificar se esta active
+
+-------
+
+instalacao de Uncomplicated FireWall
+
+$sudo apt install ufw
+$sudo enable ufw
+$sudo allow ufw 4242
+$sudo ufw status --- verificar se esta activo em 4242 e 4242(6)
+
+-------
