@@ -176,10 +176,19 @@ $sudo nano /usr/local/bin/monitoring.sh
 	###peram=$(free | awk '$1 == Mem:" {printf("%.2f), $3/$2*100}') ---- faz o
 	mesmo que os 2 comandos anteriores, apenas faz a percentagem de ram
 	usada/ram total
-	###avadisk=$(df -Bg | grep '^/dev/' | grep -v '/bootS' | awk '{ft += S2} END {print ft}')
-	###totdisk=$(df -Bm | grep '^/dev/' | grep -v '/bootS' | awk '{ut += S3} END {print ut}')
-	###perdisk=$(df -Bm | grep '^/dev/' | grep -v '/bootS' | awk '{ut += S3} {ft+= $2} END {printf("%d"), ut/ft*100}')
+	###avadisk=$(df -Bg | grep '^/dev/' | grep -v '/bootS' | awk '{ft += $2} END {print ft}')
+	###totdisk=$(df -Bm | grep '^/dev/' | grep -v '/bootS' | awk '{ut += $3} END {print ut}')
+	###perdisk=$(df -Bm | grep '^/dev/' | grep -v '/bootS' | awk '{ut += $3} {ft+= $2} END {printf("%d"), ut/ft*100}')
 	---- faz o mesmo que os comandos superiores mas para o disco, dai o comando df
 	se, diferente do free (free - memoria, df - disco)
-	###
+	###cpul=$(top -bn1 | grep Cpu | awk '{printf("%.1/%.fGb (%s)", $3, $2, $5)}')
+	###lastb=$(who -b | awk '$1 == "system" {prin $3 " " $4}')
+	###lvmuse=$(lsblk | grep lvm | wc -l | awk '{if ($1){printf("yes"); exit;} else print "no"}')
+	###tcpcon=$(netstat -an | grep ESTABLISHED | wc -l)
+	###usrlog=$(users | wc -w)
+	###ip=$(hostname -I)
+	###mac=$(cat /sys/class/net/enp0s3/address)
+	###sudo=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
+	
+	--- a mensagem que ele vai dar display vai estar no ficheiro do scrip limpo ---
 
