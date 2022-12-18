@@ -139,3 +139,47 @@ $passwd --- mudar a password do user
 $sudo passwd --- mudar a password de root
 
 -------
+
+Configuracao do adaptador de internet
+
+Desligar a VM ($udo shutdwon /// ou poweroff machine no X)
+definicoes da vm, network, adaptador 1, coniguracoes avancadas, port forwarding
+criar uma nova regra com os seguintes parametros:
+
+Protocol --- TCP
+Host IP --- 127.0.0.1
+Host Port --- 4242
+Guest IP --- 10.0.2.15
+Guest Port --- 4242
+
+dentro do terminal, correr o comando $ssh .username.@localhost -p 4242
+
+-------
+
+Script etc
+
+$sudo touch /usr/local/bin/monitoring.sh 
+$sudo nano /usr/local/bin/monitoring.sh
+
+            o script sem explicacoes estara no ficheiro monitoring.sh
+	###arqui=$(uname -a) ---- retorna a identificacao do sistema operativo e 
+	kernel version
+	###ficpu=$(cat /proc/cpuinfo | grep "physical id" | wc -l)  ----
+	procura dentro do ficheiro cpuinfo a strinf "physical id". o comando wc -l
+	retorn o numero de newlines encontrada (wc - word count, -l - newlines)
+	###vicpu=$(grep "^processor" /proc/cpuinfo | wc -l) ---- procura "^processor"
+	e retorna o numero de linhas
+	###avaram=$(free -m | awk '$1 == "Mem:" {print s2}')
+	###totram=$(free -m | awk '$1 == "Mem:" {print s3}') ---- free -m retorna a 
+	quantidade de ram libertada, o comando awk permite os utilizadores para 
+	processar e manipular data e produzir reports formatados
+	###peram=$(free | awk '$1 == Mem:" {printf("%.2f), $3/$2*100}') ---- faz o
+	mesmo que os 2 comandos anteriores, apenas faz a percentagem de ram
+	usada/ram total
+	###avadisk=$(df -Bg | grep '^/dev/' | grep -v '/bootS' | awk '{ft += S2} END {print ft}')
+	###totdisk=$(df -Bm | grep '^/dev/' | grep -v '/bootS' | awk '{ut += S3} END {print ut}')
+	###perdisk=$(df -Bm | grep '^/dev/' | grep -v '/bootS' | awk '{ut += S3} {ft+= $2} END {printf("%d"), ut/ft*100}')
+	---- faz o mesmo que os comandos superiores mas para o disco, dai o comando df
+	se, diferente do free (free - memoria, df - disco)
+	###
+

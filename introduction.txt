@@ -112,3 +112,26 @@ maquina virtual ter e modificar um Desktop Virtual.
 ***libpam-pwquality*** - um package que serve como um plug-in para rever e 
 classificar a seguranca de passwords, tambem tem a possibilidade de conseguir gerar passwords aleatorias
 dentro das normas de seguranca.
+
+-------
+
+***TCP PROTOCOL*** - 
+
+-------
+
+***GREP COMMAND*** - um comando que procura dentro de um ficheiro especifico
+por uma string ou palavras indicadas
+
+-------
+
+***AWK COMMAND*** - o comando awk permite os utilizadores para processar e 
+manipular data e produzir reports formatados
+
+-------
+
+***DF COMMAND*** - reporta o o tamanho usado do disco
+
+-------
+
+***WC COMMAND*** - o comando wc significa word count, retorna o numero das palavras,
+com a flag -l, retorna o numero de newlines encontradas.
