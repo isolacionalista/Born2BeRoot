@@ -56,7 +56,7 @@ deb.debian.org, nao preencher nada no proxy info. nao participar no questionario
 
 remover as opcoes de ssh standart, grub (sim), /dev/sda
 
---------/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+--------/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/42 cmsnap/bin
 
 configurar a vm
 
@@ -65,7 +65,6 @@ tem de se inserir a mensagem de ecnriptacao e fazer o login com a password.
 -------
 
 intalacao de sudo e adicionar utilizadores em grupos
-
 $su - ,(inserir password), $apt install sudo
 $adduser .username. sudo, $sudo reboot
 $sudo -v (-validate, da update as credenciais do usar e autentica-as se necessario)
@@ -87,8 +86,8 @@ $sudo service ssh status ---- verificar se esta active
 instalacao de Uncomplicated FireWall
 
 $sudo apt install ufw
-$sudo enable ufw
-$sudo allow ufw 4242
+$sudo ufw enable
+$sudo ufw allow 4242
 $sudo ufw status --- verificar se esta activo em 4242 e 4242(6)
 
 -------
@@ -117,7 +116,7 @@ $sudo nano /etc/login.defs
 mudar as definicoes para:
 maximo de dias 30, minimo de dias 2, manter a mensagem de aviso de alteracao 7
 
-$sudo apt install lipbam-pwquality
+$sudo apt install libpam-pwquality
 $sudo nano /etc/pam.d/common-password
 
 dentro do ficheiro common-password, no final da linha "password requisite 
@@ -157,11 +156,7 @@ dentro do terminal, correr o comando $ssh .username.@localhost -p 4242
 -------
 
 Script etc
-
-$sudo touch /usr/local/bin/monitoring.sh 
-$sudo nano /usr/local/bin/monitoring.sh
-
-            o script sem explicacoes estara no ficheiro monitoring.sh
+42 cm            o script sem explicacoes estara no ficheiro monitoring.sh
 	###arqui=$(uname -a) ---- retorna a identificacao do sistema operativo e 
 	kernel version
 	###ficpu=$(cat /proc/cpuinfo | grep "physical id" | wc -l)  ----
@@ -191,4 +186,14 @@ $sudo nano /usr/local/bin/monitoring.sh
 	###sudo=$(journalctl _COMM=sudo | grep COMMAND | wc -l)
 	
 	--- a mensagem que ele vai dar display vai estar no ficheiro do scrip limpo ---
+
+-------
+
+Crontab 
+
+$sudo crontab -e 
+
+adicionar 
+*/10 * * * * bash /path do ficheiro
+@reboot sleep 30 bash /path do ficheiro
 

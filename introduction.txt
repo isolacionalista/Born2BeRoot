@@ -105,17 +105,14 @@ maquina virtual ter e modificar um Desktop Virtual.
 
 -------
 
-***TTY*** - 
+***TTY*** - um comando que verifica se a said de informacao e um terminal (quase como
+uma protecao/seguranca)
 
 -------
 
 ***libpam-pwquality*** - um package que serve como um plug-in para rever e 
 classificar a seguranca de passwords, tambem tem a possibilidade de conseguir gerar passwords aleatorias
 dentro das normas de seguranca.
-
--------
-
-***TCP PROTOCOL*** - 
 
 -------
 
