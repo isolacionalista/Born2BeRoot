@@ -28,3 +28,97 @@ wall " #Arquitectura: $arqui
 	   #Logs do User: $usrlog
 	   #Network: IP $ip ($mac)
 	   #Sudo: $sudo comandos"
+	   
+	   # Cmd for eval
+
+| $ sudo adduser username                    | <- creating new user (yes (no)) |
+| --- |
+
+| | $ sudo chage -l username                   | <- Verify password expire info for new user |
+| --- |
+
+| | $ sudo adduser username sudo               | |
+| --- |
+|  |
+
+| $ sudo adduser username user42             | <- assign new user to sudo and user42 groups
+
+| 1) lsblk                              1 <- Check partitions |
+| --- |
+
+| | 2) sudo aa-status                     2 <- AppArmor status |
+| --- |
+
+| | 3) getent group sudo                  3 <- sudo group users |
+| --- |
+
+| | 4) getent group user42                4 <- user42 group users |
+| --- |
+
+| | 5) sudo service ssh status            5 <- ssh status, yep |
+| --- |
+
+| | 6) sudo ufw status                    6 <- ufw status |
+| --- |
+
+| | 7) ssh username@ipadress -p 4242      7 <- connect to VM from your host (physical) machine via SSH |
+| --- |
+
+| | 8) nano /etc/sudoers.d/<filename>     8 <- yes, sudo config file. You can $ ls /etc/sudoers.d first |
+| --- |
+
+| | 9) nano /etc/login.defs               9 <- password expire policy |
+| --- |
+
+| | 10) nano /etc/pam.d/common-password  10 <- password policy |
+| --- |
+
+| 11) sudo crontab -l                  11 <- cron schedule
+
+| How to change hostname? |
+| --- |
+
+[$sudo nano /etc/hostname]
+
+[$cd /var/log/sudo/00/00 && ls]
+
+| [$ sudo apt update] |
+| --- |
+
+| [$ ls] |
+| --- |
+
+| Now you see that we have a new directory here. |
+| --- |
+
+| [$ cd <nameofnewdirectory> && ls] |
+| --- |
+
+| [$ cat log] <- Input log |
+| --- |
+
+[$ cat ttyout] <- Output log
+
+| $ sudo ufw allow 8080] <- allow |
+| --- |
+
+| [$ sudo ufw status] <- check |
+| --- |
+
+[$ sudo ufw deny 8080] <- deny (yes yes)
+
+| How to run script every 30 seconds? |
+| --- |
+
+[$ sudo crontab -e]
+
+| */1 * * * * /path/to/monitoring.sh              | |
+| --- |
+
+| | */1 * * * * sleep 30s && /path/to/monitoring.sh | |
+| --- |
+
+| To stop script running on boot you just need to remove or commit |
+| --- |
+
+| @reboot /path/to/monitoring.sh |
